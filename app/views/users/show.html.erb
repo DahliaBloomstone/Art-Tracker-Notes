@@ -1,0 +1,36 @@
+<%= render "shared/page_title", title: "#{@user.name}'s Profile" %>
+
+<div class="col-md-8 well">
+  <h4>Name: <%= @user.name %></h4>
+  <h4> Email: <%= @user.email %></h4>
+</div>
+
+  <br><br>
+<% if @user.art_plans.count != 0 %>
+  <h4 align="center">Your Art Project Plans</h4>
+  <hr />
+  <div align="center">
+    <%= will_paginate @user_artplans %>
+  </div>
+    <%= render 'art_plans/artplan', obj: @user_artplans %>
+    <div align="center">
+      <%= will_paginate @user_artplans %>
+    </div>
+
+    <br><br>
+
+<div class="artplan-actions">
+<% if logged_in? && current_user == @user %>
+  <%= link_to "Create an Art Project Plan", new_art_plan_path, class:"btn btn-xs btn-xlarge"%>
+  <%= link_to "See Art Project Plans", art_plans_path, class:"btn btn-xs btn-xlarge"%>
+  <%= link_to "Log Out", logout_path, method: :delete, class:"btn btn-xs btn-xlarge"%>
+<% end %>
+<%= link_to "Your Art Project Plans", art_plans_path(@art_plan), class:"btn btn-xs btn-xlarge" %>
+</div>
+
+<% else %>
+  <h4 align="center"> No Future Art Project Plans yet! </h4><br><br>
+  <div align="center">
+    <%= link_to "Create an Art Project Plan", new_art_plan_path, class:"btn btn-xs btn-xlarge"%>
+  </div>
+<% end %>
