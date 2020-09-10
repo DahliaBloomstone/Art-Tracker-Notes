@@ -1,5 +1,7 @@
 # README
 
+This is an app for artists! Here, as a user, you can create an account and track your art projects through schedules and planning. You can plan your projects through goals and descriptions, schedule your projects via time and type, and describe your art projects through medium, idea, artist reference, content, price, and day. 
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
