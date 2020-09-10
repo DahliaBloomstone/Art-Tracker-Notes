@@ -1,3 +1,2 @@
-
 module ArtPlansHelper
 end
