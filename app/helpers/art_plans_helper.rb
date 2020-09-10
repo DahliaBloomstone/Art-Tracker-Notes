@@ -1,3 +1,3 @@
 
-module MealPlansHelper
+module ArtPlansHelper
 end
