@@ -29,9 +29,16 @@ end
 
     private 
     def art_project_params 
+        params.require(:art_project).permit(:medium, :day, :idea, :artist_reference, :content, :price)
     end 
 
     def set_art_project 
+        @art_project = ArtProject.find_by(id: params[:id])
+        if !@art_project 
+            flash[:dancer] = "Art Project Not Found! Try Again!"
+            redirect_to art_projects_path 
+        end 
     end 
 
+    
 end 
