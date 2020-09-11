@@ -1,0 +1,38 @@
+<%= form_for [@art_project] do |f| %>
+
+    <%= render partial: 'layouts/errors', locals: {object: @art_project} %>
+      <div class="col-md-8 well">
+    
+    
+      <%= f.label :medium %>
+      <%= f.text_field :medium, placeholder: "Painting" %>
+    
+      <%= f.label :idea %>
+      <%= f.text_field :idea, placeholder: "Political" %>
+    
+      <%= f.label :artist_reference %>
+      <%= f.text_field :artist_reference, placeholder: "Jeff Koons" %>
+    
+      <%= f.label :content %>
+      <%= f.text_field :content, placeholder: "Internet" %>
+    
+      <%= f.label :price %>
+      <%= f.number_field :price, placeholder: "One Million" %>
+    
+      <%= f.label :day %>
+      <%= f.date_field :day %>
+    
+    <br><br>
+    
+    
+      <%= f.label :art_plan_id, "Select an Art Project Plan"%>
+      <%= f.collection_select :art_plan_ids, ArtPlan.all, :id, :goal, prompt: true %>
+    
+    
+      <br><br>
+    
+    <div class="center">
+      <%= f.submit %>
+    </div>
+    <% end %>
+    
