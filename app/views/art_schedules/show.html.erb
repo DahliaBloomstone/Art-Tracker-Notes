@@ -1,0 +1,26 @@
+<%= render "shared/page_title", title: "Current Art Project Scheduling:" %>
+
+<div class="col-md-8 well">
+<p> Today you worked on this art project: </p>
+  <ul>
+    <li><%= @art_schedule.art_project.try(:medium).capitalize %></li>
+    <li><%= @art_schedule.art_project.try(:idea).capitalize %></li>
+    <li><%= @art_schedule.art_project.try(:content).capitalize %></li>
+    <li><%= @art_schedule.art_project.try(:artist_reference).capitalize %></li>
+    <li><%= @art_schedule.art_project.try(:price) %> price of <%= @art_schedule.art_project.try(:price) %></li>
+    <li><%= @art_schedule.art_project.try(:day).strftime("%b %d, %Y") %></li>
+  </ul>
+  </ul>
+<p> Art Project Details: </p>
+  <ul>
+    <li><strong><%= @art_schedule.art_time %></strong> (Art Project Time)</li>
+    <li><strong><%= @art_schedule.art_type %></strong> (Art Project Type)</li>
+  </ul>
+
+<div class="artplan-actions">
+  <% if logged_in? && current_user == @art_schedule.art_plan.user %>
+    <%= link_to "Edit Art Project Schedule", edit_art_schedule_path(@art_schedule),  class:"btn btn-xs btn-warning" %>
+    <%= link_to "Delete Art Project Schedule", art_schedule_path(@art_schedule), method: :delete, data: { confirm: "Are you sure you want to delete this art project schedule?"}, class:"btn btn-xs btn-danger" %>
+  <% end %>
+  <%= link_to "See Art Project Scheduling", art_schedules_path(@art_schedule), class:"btn btn-xs btn-xlarge" %>
+</div>
