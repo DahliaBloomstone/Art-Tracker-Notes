@@ -1,0 +1,26 @@
+<% obj.each do |art_project| %>
+    <div class="row">
+      <div class="col-md-2">
+        <section class ="center">
+        </section>
+      </div>
+      <div class="col-md-8 well">
+         <h5><%= link_to "Current Art Project", art_project_path(art_project) %></h5>
+          <ul>
+            <li><%= art_project.try(:medium).capitalize %></li>
+            <li><%= art_project.try(:idea).capitalize %></li>
+            <li><%= art_project.try(:artist_reference).capitalize %></li>
+            <li><%= art_project.try(:content).capitalize %></li>
+            <li> Worked on project: <%= art_project.try(:day).strftime("%b %d, %Y") %></li>
+          </ul>
+         <p>
+           <span class="quiet"></span><small>Created <%= time_ago_in_words(art_project.created_at) %> ago</small></span>
+         </p>
+         <div class="artplan-actions">
+          <%= link_to "View Your Art Project Scheduling", art_project_art_schedules_path(art_project), class:"btn btn-xs btn-primary" %>
+         </div>
+  
+      </div>
+    </div>
+  <% end %>
+  
