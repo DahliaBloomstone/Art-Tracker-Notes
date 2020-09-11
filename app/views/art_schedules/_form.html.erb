@@ -1,0 +1,62 @@
+<%= form_for [@art_schedule]  do |f| %>
+    <%= render partial: 'layouts/errors', locals: {object: @art_schedule} %>
+    <%= f.hidden_field :art_id %>
+  
+    <div class="col-md-8 well">
+  
+  <div class="center">
+    <%= f.label :art_time %>
+    <%= f.select(:art_time, ["Morning-ish", "Afternoon-ish", "Evening-ish", "Night-ish"]) %>
+  </div>
+  
+  <div class="center">
+    <%= f.label :art_type %>
+    <%= f.select(:art_type, ["Painting", "Collage", "Video", "Performance", "Drawing", "Sculpture"]) %>
+  </div>
+  
+  <div class="center">
+    <%= f.label :art_id, "Select an Art Project"%>
+    <%= f.collection_select :art_id, ArtProject.all, :id, :medium, prompt: true %>
+  </div>
+  
+  <div class="center">
+    <%= f.label :art_plan_id, "Select an Art Project Plan"%>
+    <%= f.collection_select :art_plan_id, ArtPlan.all, :id, :goal, prompt: true %>
+  </medium
+  
+    <br><br>
+  
+      <% if !params[:art_id] %>
+        <h4>Or, add a new art project:</h4>
+  
+        <%= f.fields_for :art_project do |v|%>
+        <%= v.label :medium %>
+        <%= v.text_field :medium, placeholder: "Video" %>
+  
+        <%= v.label :content %>
+        <%= v.text_field :content, placeholder: "Politics" %>
+  
+        <%= v.label :artist_reference %>
+        <%= v.text_field :artist_reference, placeholder: "Tony Oursler" %>
+  
+        <%= v.label :idea %>
+        <%= v.text_field :idea, placeholder: "Beauty Standards" %>
+  
+        <%= v.label :price %>
+        <%= v.number_field :price, placeholder: "$16,000" %>
+  
+        <%= v.label :day %>
+        <%= v.date_field :day %>
+
+        <% end %>
+      <% end %>
+  
+      <br><br>
+  
+  
+  
+  <div class="center">
+    <%= f.submit %>
+  </div>
+  
+    <% end %>
