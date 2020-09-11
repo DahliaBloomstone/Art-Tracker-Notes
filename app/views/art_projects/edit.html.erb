@@ -1,0 +1,31 @@
+<%= render "shared/page_title", title: "Edit Your Art Projects" %>
+<%= render partial: 'layouts/errors', locals: {object: @art_project} %>
+<div class="col-md-8 well">
+<%= form_for [@art_project]  do |f| %>
+
+  <%= f.label :medium %>
+  <%= f.text_field(:medium) %>
+
+  <%= f.label :idea %>
+  <%= f.text_field(:idea) %>
+
+  <%= f.label :artist_reference %>
+  <%= f.text_field(:artist_reference) %>
+
+  <%= f.label :content %>
+  <%= f.text_field(:content) %>
+
+  <%= f.label :price %>
+  <%= f.number_field(:price) %>
+
+  <%= f.label :day %>
+  <%= f.date_field(:day) %>
+
+  <br><br>
+
+  <%= f.label :art_plan_id, "Select an Art Project Plan to Organize Future Projects!"%>
+  <%= f.collection_select :art_plan_ids, ArtPlan.all, :id, :goal, prompt: true %>
+
+  <br><br>
+  <%= f.submit %>
+<% end %>
