@@ -10,9 +10,11 @@
   <%= f.label :password_confirmation, "Confirmation" %>
   <%= f.password_field :password_confirmation, required:true  %>
 
+  <%= f.submit "Log in here!" %>
+
   <br><br
 <% end %>
 <br><br>
 <div class="center colormatch">
-  [ <%= link_to "Don't have an account? Click to Sign Up", signup_path %>]
+  [ <%= link_to "Don't have an account? Sign Up Here:", signup_path %>]
 </div>
