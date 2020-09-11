@@ -1,0 +1,9 @@
+<%= render "shared/page_title", title: "All Your Future Art Project Plans" %>
+
+<div align="center">
+  <%= will_paginate %>
+</div>
+<%= render 'artplan', obj: @art_plans %>
+<div align="center">
+  <%= will_paginate %>
+</div>

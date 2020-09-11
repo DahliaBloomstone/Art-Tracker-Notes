@@ -1,0 +1,17 @@
+<%= render "shared/page_title", title: "Your Art Project Planning Resource! Write your goals and project descriptions:" %>
+<div class="well col-md-8 col-md-offset-2">
+  <h4><strong>Art Project Plan Description: </strong></h4>
+  <hr />
+  <ul>
+    <li><strong><%= @art_plan.goal %></strong> (Goal)</li>
+    <li><strong><%= @art_plan.description%></strong> (Description)</li>
+
+</ul>
+<div class="artplan-actions">
+  <% if logged_in? && current_user == @art_plan.user %>
+    <%= link_to "Add Art Projects +", new_art_plan_art_schedule_path(@art_plan), class:"btn btn-xs btn-xlarge" %>
+    <%= link_to "Edit Art Project Plan", edit_art_plan_path(@art_plan), class:"btn btn-xs btn-warning" %>
+    <%= link_to "Delete your Art Project Plan", art_plan_path(@art_plan), method: :delete, data: { confirm: "Are you sure you want to delete this future art project and associated projects?"}, class:"btn btn-xs btn-danger" %>
+  <% end %>
+    <%= link_to "View Art Projects +", art_plan_art_schedules_path(@art_plan), class:"btn btn-xs btn-primary" %>
+</div>
