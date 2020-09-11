@@ -13,7 +13,7 @@ class ArtPlansController < ApplicationController
     def new
       @art_plan = ArtPlan.new
       @art_plan.art_schedules.build
-      @art = Art.new
+      @art_project = ArtProject.new
     end
   
     def create
