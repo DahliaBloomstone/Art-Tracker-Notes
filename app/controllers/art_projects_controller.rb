@@ -16,6 +16,14 @@ end
     end 
 
     def update 
+        set_art_project
+        redirect_if_not_logged_in 
+        if @art_project.update(art_project_params)
+            flash[:success] = "Your art project has been updated!"
+            redirect_to art_project_path(@art_project)
+        else 
+            render :edit 
+        end 
     end 
 
 
