@@ -1,0 +1,19 @@
+<%= render "shared/page_title", title: "Your Art Projects" %>
+
+<div class="col-md-8 well">
+  <h4> Description of this art project: </h4>
+<ul>
+  <li>Medium: <%= @art_project.try(:medium).capitalize %></li>
+  <li>Idea: <%= @art_project.try(:idea).capitalize %></li>
+  <li>Artist Reference: <%= @art_project.try(:artist_reference).capitalize %></li>
+  <li>Content: <%= @art_project.try(:content).capitalize %></li>
+  <li><%= @art_project.try(:price) %> price of <%= @art_project.try(:price) %></li>
+  <li>Worked on: <%= @art_project.try(:day).strftime("%b %d, %Y")%></li>
+</ul>
+
+<div class="artplan-actions">
+  <%= link_to "View Art Project Scheduling", art_project_art_schedules_path(@art_project), class:"btn btn-xs btn-primary" %>
+</div>
+
+
+<%=#In Rails, try() lets you call methods on an object without having to worry about the possibility of that object being nil and thus raising an exception.%>
