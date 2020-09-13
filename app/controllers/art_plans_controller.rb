@@ -21,9 +21,9 @@ class ArtPlansController < ApplicationController
   
       if @art_plan.save
         flash[:success] = "Your art plan was created!"
-        ms = ArtSchedule.new(art_schedule_params)
-        ms.art_plan = @art_plan
-        ms.save
+        as = ArtSchedule.new(art_schedule_params)
+        as.art_plan = @art_plan
+        as.save
         redirect_to art_plan_path(@art_plan)
       else
         render :new

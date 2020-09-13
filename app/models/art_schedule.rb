@@ -9,6 +9,6 @@ class ArtSchedule < ApplicationRecord
   
   
     def art_project=(attributes)
-      self.build_art_project(attributes) unless self.art_id
+      self.build_art_project(attributes) unless self.art_project_id
     end
   end
