@@ -1,9 +1,4 @@
-<div class="col-md-8 well">
-  <%= form_for (@art_plan)  do |f| %>
-    <%= render partial: 'layouts/errors', locals: {object: @art_plan} %>
-    <h4><center>Create an art plan:</h4></center>
-
-  <div class="center">
+<div class="center">
     <%= f.label :goal %>
     <%= f.select(:goal, ["Gallery", "Museum", "Price", "Finish by", "Critique"]) %>
   </div>
