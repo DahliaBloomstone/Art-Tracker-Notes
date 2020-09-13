@@ -4,12 +4,10 @@
         <section class ="center">
   
         </section>
-      </div>
-      <% if artplan.art_projects.favorite.count != 0 %>
-  
+      </div>  
         <div>
           <h4>Your Art Projects: </h4>
-            <% artplan.art_projects.favorite.map do |art_project| %>
+            <% artplan.art_projects.map do |art_project| %>
                 <li><%= art_project.medium.capitalize %></li>
             <% end %>
         </div>

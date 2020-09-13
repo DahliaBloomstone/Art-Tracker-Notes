@@ -1,6 +1,11 @@
-<div class="center">
+<div class="col-md-8 well">
+<%= form_for (@art_plan)  do |f| %>
+  <%= render partial: 'layouts/errors', locals: {object: @art_plan} %>
+  <h4><center>Create an art plan:</h4></center>
+
+  <div class="center">
     <%= f.label :goal %>
-    <%= f.select(:goal, ["Gallery", "Museum", "Price", "Finish by", "Critique"]) %>
+    <%= f.select(:goal, ["Write Gallery Description", "Send to Museum", "Set Price", "Finish Soon", "Finish for Critique"]) %>
   </div>
 
   <div class="center">
@@ -10,42 +15,41 @@
   <br><br>
 </div>
 
-
     <div class="col-md-8 well">
       <h4><center>Add your art schedule:</h4></center>
-      <%= f.fields_for :art_schedule do |ms|%>
+      <%= f.fields_for :art_schedule do |as|%>
 
     <div class="center">
-      <%= ms.label :art_time %>
-      <%= ms.select(:art_time, ["Morning", "Afternoon", "Evening", "Night"]) %>
+      <%= as.label :art_time %>
+      <%= as.select(:art_time, ["Morning-ish", "Afternoon-ish", "Evening-ish", "Night-ish"]) %>
     </div>
 
     <div class="center">
-      <%= ms.label :art_type %>
-      <%= ms.select(:art_type, ["Painting", "Video", "Sculpture', "Performance", "Drawing"]) %>
+      <%= as.label :art_type %>
+      <%= as.select(:art_type, ["Painting", "Video", "Sculpture", "Performance", "Drawing"]) %>
     </div>
   </div>
 
       <div class="col-md-8 well">
         <h4><center>Add your art project:</h4></center>
-        <%= ms.fields_for :art_project do |m|%>
-          <%= m.label :medium %>
-          <%= m.text_field :medium, placeholder: "Painting", required: true %>
+        <%= as.fields_for :art_project do |a|%>
+          <%= a.label :medium %>
+          <%= a.text_field :medium, placeholder: "Painting", required: true %>
 
-          <%= m.label :idea %>
-          <%= m.text_field :idea, placeholder: "Identity", required: true  %>
+          <%= a.label :idea %>
+          <%= a.text_field :idea, placeholder: "Identity", required: true  %>
 
-          <%= m.label :content %>
-          <%= m.text_field :content, placeholder: "Social Issues", required: true  %>
+          <%= a.label :content %>
+          <%= a.text_field :content, placeholder: "Social Issues", required: true  %>
 
-          <%= m.label :artist_reference %>
-          <%= m.text_field :artist_reference, placeholder: "Murakami", required: true  %>
+          <%= a.label :artist_reference %>
+          <%= a.text_field :artist_reference, placeholder: "Murakami", required: true  %>
 
-          <%= m.label :price %>
-          <%= m.number_field :price, placeholder: "$100,000", required: true  %>
+          <%= a.label :price %>
+          <%= a.number_field :price, placeholder: "$100,000", required: true  %>
 
-          <%= m.label :day %>
-          <%= m.date_field :day, required: true  %>
+          <%= a.label :day %>
+          <%= a.date_field :day, required: true  %>
 
           <% end %>
       <% end %>
