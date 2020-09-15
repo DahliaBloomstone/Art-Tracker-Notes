@@ -4,7 +4,7 @@ class ArtPlansController < ApplicationController
     before_action :require_same_user, only: [:edit, :update, :delete]
   
     def index
-      @art_plans = current_user.art_plans.paginate(page: params[:page], per_page: 2)
+      @art_plans = current_user.art_plans
     end
   
     def show

@@ -5,20 +5,15 @@
         </section>
       </div>  
       <div> 
-          <h4>Your Art Projects: </h4>
-            <% artplan.art_projects.map do |art_project| %>
-                <li><%= art_project.medium.capitalize %></li>
-            <% end %>
-        </div>
-      <% else %>
-        <h4> No projects yet! </h4>
-      <% end %>
+        
   
       <div class="col-md-8 well">
         <h4><%= link_to "My Art Plan", art_plan_path(artplan) %></h4>
         <ul>
+        <%=#byebug %>
           <li><%= pluralize(artplan.art_projects.count, "art projects") if artplan.art_projects %></li>
-           <li><%= artplan.goal %> (goal)</li>
+    
+          <li><%= artplan.goal %> (goal)</li>
            <li><%= artplan.description %> (description)</li>
          </ul>
          </p>
