@@ -4,14 +4,14 @@
   <%= form_for (@art_plan)  do |f| %>
   <h4><center>Edit art plan:</h4></center>
 
-  <div class="center">
-    <%= f.label :goal %>
-    <%= f.select(:goal) %>
-  </div>
+   <div class="center">
+     <%= f.label :goal %>
+     <%= f.text_field(:goal) %>
+   </div>
 
   <div class="center">
     <%= f.label :description %>
-    <%= f.select(:description) %>
+    <%= f.text_field(:description) %>
   </div>
   <br><br>
 
@@ -19,3 +19,4 @@
   <%= f.submit %>
 </div>
 <% end %>
+

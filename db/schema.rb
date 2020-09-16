@@ -28,22 +28,19 @@ ActiveRecord::Schema.define(version: 4) do
     t.string "artist_reference"
     t.string "content"
     t.integer "price"
-    t.integer "art_plan_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["art_plan_id"], name: "index_art_projects_on_art_plan_id"
   end
 
   create_table "art_schedules", force: :cascade do |t|
     t.string "art_time"
     t.string "art_type"
-    t.integer "art_id"
+    t.integer "art_project_id"
     t.integer "art_plan_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["art_id"], name: "index_art_schedules_on_art_id"
     t.index ["art_plan_id"], name: "index_art_schedules_on_art_plan_id"
-    t.index ["art_project_id"] name: "index_art_schedules_on_art_project_id" ##?
+    t.index ["art_project_id"], name: "index_art_schedules_on_art_project_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -56,8 +53,7 @@ ActiveRecord::Schema.define(version: 4) do
     t.datetime "updated_at", null: false
   end
 
-  #add_foreign_key "art_plans", "users"
-  #add_foreign_key "art_projects", "art_plans"
-  #add_foreign_key "art_schedules", "art_plans"
-  #add_foreign_key "art_schedules", "arts"
-#end
+  add_foreign_key "art_plans", "users"
+  add_foreign_key "art_schedules", "art_plans"
+  add_foreign_key "art_schedules", "art_projects"
+end

@@ -1,6 +1,6 @@
 <%= form_for [@art_schedule]  do |f| %>
     <%= render partial: 'layouts/errors', locals: {object: @art_schedule} %>
-    <%= f.hidden_field :art_id %>
+    <%= f.hidden_field :art_project_id %>
   
     <div class="col-md-8 well">
   
@@ -15,8 +15,8 @@
   </div>
   
   <div class="center">
-    <%= f.label :art_id, "Select an Art Project"%>
-    <%= f.collection_select :art_id, ArtProject.all, :id, :medium, prompt: true %>
+    <%= f.label :art_project_id, "Select an Art Project"%>
+    <%= f.collection_select :art_project_id, ArtProject.all, :id, :medium, prompt: true %>
   </div>
   
   <div class="center">
@@ -26,7 +26,7 @@
   
     <br><br>
   
-      <% if !params[:art_id] %>
+      <% if !params[:art_project_id] %>
         <h4>Or, add a new art project:</h4>
   
         <%= f.fields_for :art_project do |v|%>
