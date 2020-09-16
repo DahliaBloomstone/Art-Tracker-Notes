@@ -44,7 +44,7 @@ class ArtPlansController < ApplicationController
     end
   
     def destroy
-      @art_plan.destroy
+      @art_plan.destroy #doesn't want delete or destroy??
       flash[:success] = "Your art plan and all associated art plans were deleted!"
       redirect_to art_plans_path
     end
