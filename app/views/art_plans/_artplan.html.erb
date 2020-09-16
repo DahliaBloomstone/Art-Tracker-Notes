@@ -4,13 +4,10 @@
         <section class ="center">
         </section>
       </div>  
-      <div> 
         
-  
       <div class="col-md-8 well">
         <h4><%= link_to "My Art Plan", art_plan_path(artplan) %></h4>
         <ul>
-        <%=#byebug %>
           <li><%= pluralize(artplan.art_projects.count, "art projects") if artplan.art_projects %></li>
           <li><%= artplan.goal %> (goal)</li>
            <li><%= artplan.description %> (description)</li>

@@ -3,9 +3,12 @@ class CreateArtSchedules < ActiveRecord::Migration[5.2]
       create_table :art_schedules do |t|
         t.string :art_time
         t.string :art_type 
-        t.references :art, foreign_key: true
+        t.references :art_project, foreign_key: true
         t.references :art_plan, foreign_key: true
+        t.references :art_project_id, foreign_key: true  ##??
         t.timestamps
       end
     end
   end
+
+

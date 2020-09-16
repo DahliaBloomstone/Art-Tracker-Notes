@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 4) do
     t.datetime "updated_at", null: false
     t.index ["art_id"], name: "index_art_schedules_on_art_id"
     t.index ["art_plan_id"], name: "index_art_schedules_on_art_plan_id"
+    t.index ["art_project_id"] name: "index_art_schedules_on_art_project_id" ##?
   end
 
   create_table "users", force: :cascade do |t|
@@ -55,8 +56,8 @@ ActiveRecord::Schema.define(version: 4) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "art_plans", "users"
-  add_foreign_key "art_projects", "art_plans"
-  add_foreign_key "art_schedules", "art_plans"
-  add_foreign_key "art_schedules", "arts"
-end
+  #add_foreign_key "art_plans", "users"
+  #add_foreign_key "art_projects", "art_plans"
+  #add_foreign_key "art_schedules", "art_plans"
+  #add_foreign_key "art_schedules", "arts"
+#end

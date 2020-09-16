@@ -12,7 +12,7 @@
            <li><%= artschedule.art_project.try(:artist_reference).capitalize %></li>
            <li><%= artschedule.art_project.try(:idea).capitalize %></li>
            <li><%= artschedule.art_project.try(:content).capitalize %></li>
-           <li><%= artschedule.art_project.try(:price) %> ounces of <%= artschedule.art_project.try(:price) %></li>
+           <li><%= artschedule.art_project.try(:price) %> price of <%= artschedule.art_project.try(:price) %></li>
            <li><%= artschedule.art_project.try(:day).strftime("%b %d, %Y") %></li>
          </ul>
          <h5><%= link_to "Art Schedule:", art_schedule_path(artschedule) %></h5>
