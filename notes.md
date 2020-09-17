@@ -61,3 +61,11 @@ nil
   ↳ app/views/art_plans/_artplan.html.erb:14
 #<ActiveRecord::Relation []>
 (byebug) 
+
+
+TO FIX: 
+recent issues: 
+nothing happens when you login
+delete issue in art plans controller 
+fix styling
+fix facebook connection 

@@ -43,8 +43,12 @@ class ArtPlansController < ApplicationController
       end
     end
   
+    #https://stackoverflow.com/questions/13275814/undefined-method-destroy-for-nilnilclass
     def destroy
-      @art_plan.destroy #doesn't want delete or destroy??
+      #@art_plan = ArtPlan.find(params[:id])
+      #if @art_plan.present?
+      @art_plan.destroy 
+      #end 
       flash[:success] = "Your art plan and all associated art plans were deleted!"
       redirect_to art_plans_path
     end
