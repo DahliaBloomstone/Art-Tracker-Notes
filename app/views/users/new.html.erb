@@ -1,8 +1,11 @@
-<%= render "shared/page_title", title: "Sign Up for an Account" %>
+
+
+<%= render "shared/page_title", title:  "Sign Up for an Account" %>
 <%= render partial: 'layouts/errors', locals: {object: @user} %>
 <div class="row">
-  <div class="col-md-12">
-    <%= form_for(@user, :html => {class: "form-horizontal", role: "form"})  do |f| %>
+
+<div class="col-md-12">
+ <%= form_for(@user, :html => {class: "form-horizontal", role: "form"})  do |f| %>
       <div class="form-group">
         <div class="control-label col-md-2">
           <%= f.label :name %>
@@ -35,6 +38,11 @@
           <%= f.password_field :password_confirmation, class:"form-control", required:true, placeholder: "Confirm Your Password"  %>
         </div>
       </div>
+     
+     
+     
+     
+     
       <div class="col-md-8">
         <h3> Or sign up with <%= link_to "Facebook", "/auth/facebook" %></h3>
       </div>
@@ -46,4 +54,6 @@
 <% end %>
 <div class="center colormatch">
   [ <%= link_to "Already have an account? Click to Log in", login_path %>]
-</div>
+
+
+  </div>
