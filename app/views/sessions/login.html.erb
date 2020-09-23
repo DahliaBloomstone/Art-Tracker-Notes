@@ -10,6 +10,11 @@
   <%= f.label :password_confirmation, "Confirmation" %>
   <%= f.password_field :password_confirmation, required:true  %>
 
+
+  <div class="col-md-8">
+  <h3> Or log in with <%= link_to "Facebook", "/auth/facebook" %></h3>
+</div>
+
   <%= f.submit "Log in here!" %>
 
   <br><br
