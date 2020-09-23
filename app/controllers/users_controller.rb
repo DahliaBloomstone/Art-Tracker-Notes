@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       if @user.save
         flash[:success] = "Welcome #{@user.name} to Art Tracker!"
         session[:user_id] = @user.id
-        redirect_to user_path(@user)
+        redirect_to user_path(@user) 
       else
         render :new
       end

@@ -1,4 +1,6 @@
 class ArtPlansController < ApplicationController
+  #lifecycle methods (CRUD): Active Record callbacks, trigger logic, use macro class methods to "register" them (below)
+  #code that will run whenever an AR object is created, updated, deleted etc. 
     before_action :set_art_plan, only: [:edit, :update, :show, :destroy]
     before_action :redirect_if_not_logged_in, only: [:new, :create, :edit, :update]
     before_action :require_same_user, only: [:edit, :update, :delete]
