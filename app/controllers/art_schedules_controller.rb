@@ -1,5 +1,5 @@
 class ArtSchedulesController < ApplicationController 
-    before_action :set_art_schedules, only: [:edit, :update, :show, :delete]
+    before_action :set_art_schedules, only: [:edit, :update, :show, :destroy]
     before_action :redirect_if_not_logged_in, only: [:new, :create, :edit, :update]
     before_action :require_same_user, only: [:edit, :update, :delete]
 
