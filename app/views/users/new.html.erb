@@ -1,5 +1,3 @@
-
-
 <%= render "shared/page_title", title:  "Sign Up for an Account" %>
 <%= render partial: 'layouts/errors', locals: {object: @user} %>
 <div class="row">
@@ -14,6 +12,7 @@
             <%= f.text_field :name, class:"form-control", autofocus: true, required:true, placeholder: "Enter Your Name"%>
           </div>
       </div>
+     
       <div class="form-group">
         <div class="control-label col-md-2">
           <%= f.label :email %>
@@ -22,6 +21,7 @@
           <%= f.email_field :email, class:"form-control", required:true, placeholder: "Enter Your Email" %>
         </div>
       </div>
+     
       <div class="form-group">
         <div class="control-label col-md-2">
           <%= f.label :password %>
@@ -30,6 +30,7 @@
           <%= f.password_field :password, class:"form-control", required:true, placeholder: "Enter Your Password"  %>
         </div>
       </div>
+      
       <div class="form-group">
         <div class="control-label col-md-2">
           <%= f.label :password_confirmation, "Confirm Password" %>
@@ -40,7 +41,6 @@
       </div>
      
      
-    
       <div class="col-md-8">
         <h3> Or sign up with <%= link_to "Facebook", "/auth/facebook" %></h3>
       </div>

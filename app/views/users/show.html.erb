@@ -1,13 +1,16 @@
-<h1> <center> <p style="color:pink;"><span style="font-family:Chalkduster, fantasy">Welcome to Your Art Project Tracker! </p></center></span> </h1>
 
+<h1> <center> <p style="color:pink;"><span style="font-family:Chalkduster, fantasy">Welcome to Your Art Project Tracker! </p></center></span> </h1>
 <%= render "shared/page_title", title: "#{@user.name}'s Profile" %>
+
+
 
 <div class="col-md-8 well"> <center> 
 <h4>Name: <%= @user.name %></h4>
 <h4> Email: <%= @user.email %></h4>
 </div>
 
-  <br><br>
+
+<br><br>
 <% if @user.art_plans.count != 0 %>
   <h4 align="center">Your Art Project Plans</h4>
   <hr />
@@ -18,8 +21,9 @@
     <div align="center">
       <%= will_paginate @user_artplans %>
     </div>
-
     <br><br>
+
+    
 
 <div class="artplan-actions">
 <% if logged_in? && current_user == @user %>

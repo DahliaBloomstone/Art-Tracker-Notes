@@ -15,6 +15,7 @@ class ArtPlansController < ApplicationController
     end
   
     #creating a new art plan and storing art projects/art schedules in our art plans
+     #new action: store art plan and art project record in an instance variable
     def new
       @art_plan = ArtPlan.new
       @art_plan.art_schedules.build

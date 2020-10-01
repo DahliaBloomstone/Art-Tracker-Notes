@@ -77,6 +77,7 @@ class ArtSchedulesController < ApplicationController
 
     #method to match instance variable with class ArtSchedule and find it by its params
     #if it doesn't exists, will flash a message and redirect
+    #store art schedule record in an instance variable @art schedule
     def set_art_schedules 
         @art_schedule = ArtSchedule.find_by(id: params[:id])
         if @art_schedule.nil?
