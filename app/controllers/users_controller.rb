@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
-    before_action :redirect_if_not_logged_in, only: [:show]
+   #Filter: requires the user to be logged in 
+   #all controllers in the application inherit this method 
+  before_action :redirect_if_not_logged_in, only: [:show]
   
-    def new
+  #create a new user, save them, show page, require email/ password
+  
+  def new
       @user = User.new
     end
   

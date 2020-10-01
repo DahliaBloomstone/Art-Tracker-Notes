@@ -20,8 +20,8 @@
          </p>
          <% if logged_in? && current_user == artplan.user %>
           <div class="artplan-actions">
-           <%= link_to "Add Art Projects +", new_art_plan_art_schedule_path(artplan), class:"btn btn-xs btn-xlarge" %>
-           <%= link_to "View Art Projects +", art_plan_art_schedules_path(artplan), class:"btn btn-xs btn-primary" %>
+           <%= link_to "Add Art Projects", new_art_plan_art_schedule_path(artplan), class:"btn btn-xs btn-xlarge" %>
+           <%= link_to "View Art Projects", art_plan_art_schedules_path(artplan), class:"btn btn-xs btn-primary" %>
            <%= link_to "Edit Art Plan", edit_art_plan_path(artplan), class:"btn btn-xs btn-warning" %>
            <%= link_to "Delete Art Plan", art_plan_path(artplan), method: :delete, data: { confirm: "Are you sure you want to delete this art plan and associated art projects?"}, class:"btn btn-xs btn-danger" %>
            </div>
