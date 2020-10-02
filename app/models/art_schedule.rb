@@ -15,6 +15,7 @@ class ArtSchedule < ApplicationRecord
     #self refers to the Art Schedule
     #Active Record Lifecycle Callback: run code when something happens in our model,
     #make sure project has attributes 
+   
     def art_project=(attributes)
       self.build_art_project(attributes) unless self.art_project_id
     end

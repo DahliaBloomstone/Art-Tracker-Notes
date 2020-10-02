@@ -1,5 +1,9 @@
 class User < ApplicationRecord
-    has_secure_password
+  
+  #Adds methods to set and authenticate against a BCrypt password. T
+  #his mechanism requires you to have a password_digest attribute.
+  has_secure_password
+   
     has_many :art_plans
     has_many :art_projects, through: :art_plans
     has_many :art_schedules, through: :art_projects
