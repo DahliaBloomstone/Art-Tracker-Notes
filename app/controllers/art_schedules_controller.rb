@@ -13,7 +13,7 @@ class ArtSchedulesController < ApplicationController
      if params[:art_project_id] && art_project = ArtProject.find_by_id(params[:art_project_id])
       @art_schedules = art_project.art_schedules.paginate(page: params[:page], per_page: 2)
         else
-     @art_schedules = current_user.art_schedules.paginate(page: params[:page], per_page: 2)
+     @art_schedules = current_user.art_schedules.order_projects.paginate(page: params[:page], per_page: 2)
         end
     end 
 

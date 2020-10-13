@@ -1,3 +1,10 @@
-  <%= render "shared/page_title", title: "All Of Your Art Project Scheduling" %>
+ <%= form_tag("/art_schedules", method: "get") do %>
+  <%= label_tag(:q, "Search by medium:") %> 
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+  <% end %>
+ 
+ <%= render "shared/page_title", title: "All Of Your Art Project Scheduling" %>
 
 <%= render 'artschedule', obj: @art_schedules %>
+

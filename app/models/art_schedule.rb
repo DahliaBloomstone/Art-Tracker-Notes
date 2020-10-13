@@ -4,11 +4,16 @@ class ArtSchedule < ApplicationRecord
   
         #model level validations:
     validates :art_time, :art_type, presence: true
+
+
+
+
    
-    # default_scope -> { order(updated_at: :desc)}
   
     accepts_nested_attributes_for :art_project, reject_if: :all_blank
   
+    scope :order_projects, -> { order(created_at: :desc)}
+
   
     #self: defining a method of the class, not an instance
     #setter method for attributes for art projects 

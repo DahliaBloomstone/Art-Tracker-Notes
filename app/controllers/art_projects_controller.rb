@@ -13,8 +13,15 @@ class ArtProjectsController < ApplicationController
     if params[:art_plan_id] && artplan = ArtPlan.find_by_id(params[:art_plan_id])
     @art_projects = artplan.art_projects.paginate(page: params[:page], per_page: 2)
     else
-     @art_projects = current_user.art_projects.paginate(page: params[:page], per_page: 2)
-     end
+       # binding.pry
+     @art_projects = current_user.art_projects.order_projects.paginate(page: params[:page], per_page: 2)
+    end
+    # @art_projects = ArtProject.order_projects
+    if params[:q]     #if the user submitted a search 
+        @art_projects = @art_projects.search(params[:q]).downcase)   #search through collection we already have  
+      @art_projects = @art_projects.filter(params[:art_project][:art_project_id]) 
+      if params.try(:art_project).try(:art_project_id)
+    end 
 end 
 
     def show 
